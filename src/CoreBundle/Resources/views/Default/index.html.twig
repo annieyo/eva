@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block body %}
+    <h1>Dashboard</h1>
+    <h3>Laufende Umfragen</h3>
+    <table class="table">
+        <tr>
+            <td>ITK_2016</td>
+            <td>FIA4A</td>
+            <td><a href="#">schließen</a></td>
+        </tr>
+        <tr>
+            <td>Fragebögelchen</td>
+            <td>FIS3B</td>
+            <td><a href="#">schließen</a></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h3>Abgeschlossene Umfragen</h3>
+
+    <table class="table">
+        <tr>
+            <th>Datum</th>
+            <th>Fragebogen</th>
+            <th>Klasse</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>2016-03-15</td>
+            <td>Fragebogen Test</td>
+            <td>FIA4A</td>
+            <td><a href="#">Auswertung</a></td>
+        </tr>
+        <tr>
+            <td>2015-09-26</td>
+            <td>Fragebogen</td>
+            <td>Schule</td>
+            <td><a href="#">Auswertung</a></td>
+        </tr>
+    </table>
+{% endblock %}
