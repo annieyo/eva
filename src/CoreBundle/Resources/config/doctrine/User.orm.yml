@@ -1,0 +1,30 @@
+CoreBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        salt:
+            type: string
+            length: 255
+        kuerzel:
+            type: string
+            length: 255
+    oneToMany:
+        surveyCreatedBy:
+            targetEntity: Survey
+            mappedBy: user
+        question:
+            targetEntity: CoreBundle\Entity\Question
+            mappedBy: user

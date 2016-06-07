@@ -1,0 +1,47 @@
+CoreBundle\Entity\Question:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\QuestionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: string
+            length: 255
+        public:
+            type: string
+            length: 255
+    oneToMany:
+        answers:
+            targetEntity: CoreBundle\Entity\Answer
+            mappedBy: question
+        submission:
+            targetEntity: CoreBundle\Entity\Submission
+            mappedBy: question
+    manyToOne:
+        category:
+            targetEntity: CoreBundle\Entity\QuestionsCategory
+            inversedBy: question
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+        questiontype:
+            targetEntity: CoreBundle\Entity\Questiontype
+            inversedBy: question
+            joinColumn:
+                name: questiontype_id
+                referencedColumnName: id
+        createdby:
+            targetEntity: User
+            inversedBy: question
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+    manyToMany:
+        questionnaire:
+            targetEntity: CoreBundle\Entity\Questionnaire
+            mappedBy: question

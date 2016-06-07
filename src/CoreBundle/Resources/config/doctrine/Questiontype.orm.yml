@@ -1,0 +1,18 @@
+CoreBundle\Entity\Questiontype:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\QuestiontypeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        question:
+            targetEntity: CoreBundle\Entity\Question
+            mappedBy: questiontype

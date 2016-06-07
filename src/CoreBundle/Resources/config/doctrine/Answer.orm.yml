@@ -1,0 +1,25 @@
+CoreBundle\Entity\Answer:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\AnswerRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: string
+            length: 255
+    manyToOne:
+        question:
+            targetEntity: CoreBundle\Entity\Question
+            inversedBy: answers
+            joinColumn:
+                name: question_id
+                referencedColumnName: id
+    oneToMany:
+        submission:
+            targetEntity: CoreBundle\Entity\Submission
+            mappedBy: answer

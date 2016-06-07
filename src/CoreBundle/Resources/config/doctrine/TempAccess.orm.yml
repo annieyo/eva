@@ -1,0 +1,33 @@
+CoreBundle\Entity\TempAccess:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\TempAccessRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        participated:
+            type: boolean
+    manyToOne:
+        survey:
+            targetEntity: CoreBundle\Entity\Survey
+            inversedBy: tempaccess
+            joinColumn:
+                name: survey_id
+                referencedColumnName: id
+    oneToOne:
+        submission:
+          targetEntity: CoreBundle\Entity\Submission
+          inversedBy: tempaccess
+          joinColumn:
+            name: submission_id
+            referencedColumnName: id

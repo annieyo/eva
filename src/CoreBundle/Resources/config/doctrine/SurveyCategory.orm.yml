@@ -1,0 +1,25 @@
+CoreBundle\Entity\SurveyCategory:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\SurveyCategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        survey:
+            targetEntity: Survey
+            mappedBy: surveyCategory
+    manyToOne:
+        kind:
+            targetEntity: CoreBundle\Entity\Kind
+            inversedBy: surveycategory
+            joinColumn:
+                name: kind_id
+                referencedColumnName: id

@@ -1,0 +1,27 @@
+CoreBundle\Entity\Submission:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\SubmissionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToOne:
+        tempaccess:
+            targetEntity: CoreBundle\Entity\TempAccess
+            mappedBy: submission
+    manyToOne:
+        question:
+            targetEntity: CoreBundle\Entity\Question
+            inversedBy: submission
+            joinColumn:
+                name: question_id
+                referencedColumnName: id
+        answer:
+            targetEntity: CoreBundle\Entity\Answer
+            inversedBy: submission
+            joinColumn:
+                name: answer_id
+                referencedColumnName: id

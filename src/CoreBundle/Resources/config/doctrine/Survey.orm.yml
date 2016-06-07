@@ -1,0 +1,36 @@
+CoreBundle\Entity\Survey:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\SurveyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        questionnaire:
+            targetEntity: CoreBundle\Entity\Questionnaire
+            inversedBy: surveys
+            joinColumn:
+                name: questionnaire_id
+                referencedColumnName: id
+        surveyCategory:
+            targetEntity: CoreBundle\Entity\SurveyCategory
+            inversedBy: surveys
+            joinColumn:
+                name: surveycategory_id
+                referencedColumnName: id
+        createdBy:
+            targetEntity: CoreBundle\Entity\User
+            inversedBy: surveys
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+    oneToMany:
+        answers:
+            targetEntity: CoreBundle\Entity\Answer
+            mappedBy: survey
+        participant:
+            targetEntity: CoreBundle\Entity\TempAccess
+            mappedBy: survey

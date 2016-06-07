@@ -1,0 +1,30 @@
+CoreBundle\Entity\Questionnaire:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\QuestionnaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+    oneToMany:
+        features:
+            targetEntity: Survey
+            mappedBy: questionnaire
+    manyToMany:
+        question:
+            targetEntity: CoreBundle\Entity\Question
+            inversedBy: questionnaire
+            joinTable:
+                name: questionnaire_question
+                joinColumns:
+                    questionnaire_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    question_id:
+                        referencedColumnName: id
