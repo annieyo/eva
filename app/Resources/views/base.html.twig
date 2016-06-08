@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        {% stylesheets 'bundles/core/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     <!-- Bootstrap -->
@@ -24,7 +28,10 @@
 <div class="row">
     {% block navi %}
         <div class="col-md-2 navi">
-            <img src="images/gsologo.png" style="width: 100%"><br><br>
+            {% image '@CoreBundle/Resources/public/images/gsologo.png' %}
+                <img src="{{ asset_url }}" style="width: 100%"/>
+            {% endimage %}
+            <br><br>
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="homepage.html">Dashboard</a></li>
                 <li role="presentation"><a href="newquestionnaire.html">Neuer Fragebogen</a></li>
@@ -45,8 +52,8 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+    {% javascripts '@CoreBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 </body>
 </html>

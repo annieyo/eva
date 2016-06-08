@@ -13,7 +13,7 @@ CoreBundle\Entity\Questionnaire:
             type: string
             length: 255
     oneToMany:
-        features:
+        survey:
             targetEntity: Survey
             mappedBy: questionnaire
     manyToMany:

@@ -137,4 +137,82 @@ class Questionnaire
     {
         return $this->question;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $questionnaire;
+
+
+    /**
+     * Add questionnaire
+     *
+     * @param \CoreBundle\Entity\Survey $questionnaire
+     *
+     * @return Questionnaire
+     */
+    public function addQuestionnaire(\CoreBundle\Entity\Survey $questionnaire)
+    {
+        $this->questionnaire[] = $questionnaire;
+
+        return $this;
+    }
+
+    /**
+     * Remove questionnaire
+     *
+     * @param \CoreBundle\Entity\Survey $questionnaire
+     */
+    public function removeQuestionnaire(\CoreBundle\Entity\Survey $questionnaire)
+    {
+        $this->questionnaire->removeElement($questionnaire);
+    }
+
+    /**
+     * Get questionnaire
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getQuestionnaire()
+    {
+        return $this->questionnaire;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $survey;
+
+
+    /**
+     * Add survey
+     *
+     * @param \CoreBundle\Entity\Survey $survey
+     *
+     * @return Questionnaire
+     */
+    public function addSurvey(\CoreBundle\Entity\Survey $survey)
+    {
+        $this->survey[] = $survey;
+
+        return $this;
+    }
+
+    /**
+     * Remove survey
+     *
+     * @param \CoreBundle\Entity\Survey $survey
+     */
+    public function removeSurvey(\CoreBundle\Entity\Survey $survey)
+    {
+        $this->survey->removeElement($survey);
+    }
+
+    /**
+     * Get survey
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSurvey()
+    {
+        return $this->survey;
+    }
 }

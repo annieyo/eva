@@ -13,6 +13,8 @@ CoreBundle\Entity\Question:
             type: string
             length: 255
         public:
+            type: boolean
+        user:
             type: string
             length: 255
     oneToMany:
@@ -34,12 +36,6 @@ CoreBundle\Entity\Question:
             inversedBy: question
             joinColumn:
                 name: questiontype_id
-                referencedColumnName: id
-        createdby:
-            targetEntity: User
-            inversedBy: question
-            joinColumn:
-                name: user_id
                 referencedColumnName: id
     manyToMany:
         questionnaire:

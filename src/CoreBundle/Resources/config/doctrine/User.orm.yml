@@ -22,9 +22,6 @@ CoreBundle\Entity\User:
             type: string
             length: 255
     oneToMany:
-        surveyCreatedBy:
-            targetEntity: Survey
-            mappedBy: user
         question:
             targetEntity: CoreBundle\Entity\Question
             mappedBy: user

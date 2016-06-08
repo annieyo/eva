@@ -297,4 +297,33 @@ class Question
     {
         return $this->questionnaire;
     }
+    /**
+     * @var string
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param string $user
+     *
+     * @return Question
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return string
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

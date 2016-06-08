@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block body %}
+    <h1>Fragenpool</h1>
+
+    <form action="{{ path('question_pool') }}" method="post">
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>Frage</th>
+                <th>Kategorie</th>
+                <th>Typ</th>
+                <th>Erstellt von</th>
+            </tr>
+            {% for question in questions %}
+                <tr>
+                    <td><input type="checkbox" name="{{ question.id }}" value="{{ question.id }}"></td>
+                    <td>{{ question.text }}</td>
+                    <td>{{ question.category.name }}</td>
+                    <td>{{ question.questiontype.name }}</td>
+                    <td>{{ question.user }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <label for="questionnaire">hinzufügen zu:</label>
+        <select id="questionnaire" name="questionnaire" class="form-control">
+            <option value="" disabled selected>Bitte wählen</option>
+            {% for questionnaire in questionnaires %}
+                <option value="{{ questionnaire.id }}">{{ questionnaire.title }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <p class="text-right">
+            <button type="submit" class="btn btn-success">Speichern</button>
+        </p>
+    </form>
+{% endblock %}
