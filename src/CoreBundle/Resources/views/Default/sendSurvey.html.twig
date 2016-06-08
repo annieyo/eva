@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}EVA{% endblock %}
+
+{% block body %}
+    <div class="col-md-10">
+        <h1>Umfrage versenden</h1>
+
+        <form>
+
+            <div class="question">
+
+                <label for="survey">Fragebogen</label>
+                <select id="survey" class="form-control">
+                    <option>Fragebogen 239</option>
+                    <option>Fragebögelchen</option>
+                </select>
+
+                <label for="questiontype">Art</label>
+                <select id="questiontype" class="form-control">
+                    <option selected="selected">Abteilung</option>
+                    <option>Schule</option>
+                    <option>Klasse</option>
+                </select>
+
+                <label for="questioncategory">Kategorie</label>
+                <select id="questioncategory" class="form-control">
+                    <option>IT</option>
+                    <option>Design</option>
+                </select>
+                <hr>
+            </div>
+
+            <p class="text-right">
+                <a href="questionnaireListSecond.html" class="btn btn-success">Mails verschicken</a>
+            </p>
+        </form>
+    </div>
+
+{% endblock %}

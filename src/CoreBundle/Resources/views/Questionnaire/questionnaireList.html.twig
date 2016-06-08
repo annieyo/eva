@@ -1,0 +1,68 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}EVA{% endblock %}
+
+{% block body %}
+    <div class="col-md-10">
+        <h1>Fragebogenübersicht</h1>
+
+        <div>
+            <div>
+                <div class="col-md-6"><h4>Fragebogen 239</h4></div>
+                <div class="col-md-2"><br><a href="sendSurvey.html" type="button" class="btn btn-default btn-xs">versenden</a></div>
+                <div class="col-md-2"><br><button type="button" class="btn btn-default btn-xs delete">löschen</button></div>
+                <div class="col-md-2"><br><a href="editquestionnaire.html" class="btn btn-default btn-xs">bearbeiten</a></div>
+            </div>
+            <form>
+                <table class="table">
+                </table>
+            </form>
+            <hr>
+        </div>
+
+        <div>
+            <div>
+                <div class="col-md-6"><h4>ITK_2016</h4></div>
+                <div class="col-md-2"><br><a href="sendSurvey.html" type="button" class="btn btn-default btn-xs">versenden</a></div>
+                <div class="col-md-2"><br><button type="button" class="btn btn-default btn-xs delete">löschen</button></div>
+                <div class="col-md-2"><br><a href="editquestionnaire.html" class="btn btn-default btn-xs">bearbeiten</a></div>
+            </div>
+            <form>
+                <table class="table">
+                    <tr>
+                        <td>2016-05-12</td>
+                        <td>FIA4A</td>
+                        <td><a href="#">Auswertung</a></td>
+                    </tr>
+                </table>
+            </form>
+            <hr>
+        </div>
+
+        <div>
+            <div>
+                <div class="col-md-6"><h4>Fragebögelchen</h4></div>
+                <div class="col-md-2"><br><button type="button" class="btn btn-default btn-xs">versenden</button></div>
+                <div class="col-md-2"><br><a href="questionnaireListPopup.html" class="btn btn-default btn-xs delete">löschen</a></div>
+                <div class="col-md-2"><br><a href="editquestionnaire.html" class="btn btn-default btn-xs">bearbeiten</a></div>
+            </div>
+            <form>
+                <table class="table">
+                    <tr>
+                        <td>2016-05-12</td>
+                        <td>FIA4A</td>
+                        <td><a href="#">Auswertung</a></td>
+                    </tr>
+                    <tr>
+                        <td>2016-01-30</td>
+                        <td>FIA4B</td>
+                        <td><a href="#">Auswertung</a></td>
+                    </tr>
+                </table>
+            </form>
+            <hr>
+        </div>
+
+
+    </div>
+{% endblock %}

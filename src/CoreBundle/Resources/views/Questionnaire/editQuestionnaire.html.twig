@@ -1,0 +1,145 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}EVA{% endblock %}
+
+{% block body %}
+    <div class="row">
+
+        <div class="col-md-10">
+            <h1>Fragebogen bearbeiten</h1>
+
+            <form>
+                <div class="form-group">
+                    <label for="questionnairetitle">Titel</label>
+                    <input type="text" class="form-control" id="questionnairetitle" placeholder="Titel" value="Fragebogen 239">
+                </div>
+                <hr>
+
+                <div class="question">
+                    <label for="questiontext">Text</label>
+                    <input type="text" class="form-control" id="questiontext" placeholder="Frage" value="Wenn ich persönliche Fragen zu meiner Note habe, ist der Lehrer bereit sie mir zu erklären.">
+
+                    <label for="questiontype">Antworttyp</label>
+                    <select id="questiontype" class="form-control">
+                        <option>Schulnoten</option>
+                        <option selected="selected">Multiple Choice</option>
+                        <option>ja/nein</option>
+                        <option>Radiobutton</option>
+                    </select>
+
+                    <label for="questioncategory">Kategorie</label>
+                    <select id="questioncategory" class="form-control">
+                        <option>Allgemein</option>
+                        <option>Schüler</option>
+                        <option selected="selected">Bewertungstransparenz</option>
+                        <option>4</option>
+                    </select>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked="checked"> Öffentlich
+                        </label>
+                    </div>
+                    <a href="#">löschen</a>
+                    <hr>
+                </div>
+
+                <div class="question">
+                    <label for="questiontext">Text</label>
+                    <input type="text" class="form-control" id="questiontext" placeholder="Frage" value="Ich kann den Erklärungen des Lehrers folgen.">
+
+                    <label for="questiontype">Antworttyp</label>
+                    <select id="questiontype" class="form-control">
+                        <option>Schulnoten</option>
+                        <option selected="selected">Multiple Choice</option>
+                        <option>ja/nein</option>
+                        <option>Radiobutton</option>
+                    </select>
+
+                    <label for="questioncategory">Kategorie</label>
+                    <select id="questioncategory" class="form-control">
+                        <option>Allgemein</option>
+                        <option>Schüler</option>
+                        <option selected="selected">Exemplarizität, Praxisbezug</option>
+                        <option>4</option>
+                    </select>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Öffentlich
+                        </label>
+                    </div>
+                    <a href="#">löschen</a>
+                    <hr>
+                </div>
+
+                <div class="question">
+                    <label for="questiontext">Text</label>
+                    <input type="text" class="form-control" id="questiontext" placeholder="Frage" value="Dieser Lehrer hat mir seine Prinzipien der Notenvergabe erklärt.">
+
+                    <label for="questiontype">Antworttyp</label>
+                    <select id="questiontype" class="form-control">
+                        <option selected="selected">Schulnoten</option>
+                        <option>Multiple Choice</option>
+                        <option>ja/nein</option>
+                        <option>Radiobutton</option>
+                    </select>
+
+                    <label for="questioncategory">Kategorie</label>
+                    <select id="questioncategory" class="form-control">
+                        <option>Allgemein</option>
+                        <option>Schüler</option>
+                        <option>3</option>
+                        <option selected="selected">Bewertungstransparenz</option>
+                    </select>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked="checked"> Öffentlich
+                        </label>
+                    </div>
+                    <a href="#">löschen</a>
+                    <hr>
+                </div>
+
+                <div class="question">
+                    <label for="questiontext">Text</label>
+                    <input type="text" class="form-control" id="questiontext" placeholder="Frage" value="Dieser Lehrer fördert mich individuell.">
+
+                    <label for="questiontype">Antworttyp</label>
+                    <select id="questiontype" class="form-control">
+                        <option selected="selected">Schulnoten</option>
+                        <option>Multiple Choice</option>
+                        <option>ja/nein</option>
+                        <option>Radiobutton</option>
+                    </select>
+
+                    <label for="questioncategory">Kategorie</label>
+                    <select id="questioncategory" class="form-control">
+                        <option>Allgemein</option>
+                        <option selected="selected">Bewertungstransparenz</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked="checked"> Öffentlich
+                        </label>
+                    </div>
+                    <a href="editquestionnairePopup.html">löschen</a>
+                    <hr>
+                </div>
+
+
+                <p class="text-center new-question">
+                    <a href="#" class="btn btn-default btn-lg" role="button">+ neue Frage</a>
+                </p>
+
+                <p class="text-right">
+                    <a href="questionnaireListSecond.html" class="btn btn-success">Speichern</a>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

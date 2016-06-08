@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}EVA{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-10">
+        <h1>Eigene Fragen</h1>
+
+        <form>
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Frage</th>
+                    <th>Kategorie</th>
+                    <th>Typ</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox"></td>
+                    <td>Wenn ich persönliche Fragen zu meiner Note habe, ist der Lehrer bereit sie mir zu erklären.</td>
+                    <td>Bewertungstransparenz</td>
+                    <td>ja/nein</td>
+                    <td><a href="#">löschen</a></td>
+                    <td><a href="#">zurückziehen</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox"></td>
+                    <td>Ich kann den Erklärungen des Lehrers folgen.</td>
+                    <td>Bewertungstransparenz</td>
+                    <td>Multiple Choice</td>
+                    <td><a href="#">löschen</a></td>
+                    <td><a href="#">veröffentlichen</a></td>
+                </tr>
+            </table>
+
+            <label for="questiontype">hinzufügen zu:</label>
+            <select id="questiontype" class="form-control">
+                <option>Fragebogen 239</option>
+                <option>Fragebögelchen</option>
+                <option>ITK_2016</option>
+            </select>
+            <br>
+            <p class="text-right">
+                <a href="editquestionnaire.html" class="btn btn-success">Speichern</a>
+            </p>
+        </form>
+    </div>
+
+    {% endblock %}

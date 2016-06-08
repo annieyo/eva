@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}EVA{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Neuer Fragebogen</h1>
+
+            <form>
+                <div class="form-group">
+                    <label for="questionnairetitle">Titel</label>
+                    <input type="text" class="form-control" id="questionnairetitle" placeholder="Titel">
+                </div>
+                <hr>
+
+                <div class="question">
+                    <label for="questiontext">Text</label>
+                    <input type="text" class="form-control" id="questiontext" placeholder="Frage">
+
+                    <label for="questiontype">Antworttyp</label>
+                    <select id="questiontype" class="form-control">
+                        <option>Schulnoten</option>
+                        <option>Multiple Choice</option>
+                        <option>ja/nein</option>
+                        <option>Radiobutton</option>
+                    </select>
+
+                    <label for="questioncategory">Kategorie</label>
+                    <select id="questioncategory" class="form-control">
+                        <option>Bewertungstransparenz</option>
+                        <option>individuelle/differenzierte Förderung</option>
+                        <option>Unterrichtsgestaltung, methodische Gestaltung, Schülerbeteiligung</option>
+                        <option>Exemplarizität, Praxisbezug</option>
+                    </select>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Öffentlich
+                        </label>
+                    </div>
+                    <hr>
+                </div>
+
+
+                <p class="text-center new-question">
+                    <a href="#" class="btn btn-default btn-lg" role="button">+ neue Frage</a>
+                </p>
+
+                <p class="text-right">
+                    <a href="questionnaireList.html" class="btn btn-success">Speichern</a>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
